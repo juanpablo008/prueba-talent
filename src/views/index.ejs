@@ -1,0 +1,40 @@
+<%- include('partials/header'); %>
+
+    <div class="container">
+        <div class="row">
+            
+            <!--List-->
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Job Title</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Job Url</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < jobsItems.length; i++) {%>
+                        <tr>
+                            <td>
+                                <%= i + 1 %>
+                            </td>
+                            <td>
+                                <%= jobsItems[i].title %>
+                            </td>
+                            <td>
+                                <%= jobsItems[i].location %>
+                            </td>
+                            <td>
+                                <%= jobsItems[i].url %>
+                                <a href="<%= jobsItems[i].url %>" class="btn btn-info">Read more</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+<%- include('partials/footer'); %>
